@@ -17,12 +17,12 @@ jobs:
           cat >>~/.ssh/config <<END
           Host staging
             HostName $SSH_HOST
-            User $SSH_USER
+            User ec2-user
             IdentityFile ~/.ssh/staging.key
             StrictHostKeyChecking no
           END
         env:
-          SSH_USER: ${{ secrets.EC2_USERNAME }}
+          SSH_USER: ec2-user
           SSH_KEY: ${{ secrets.KEY }}
           SSH_HOST: ${{ secrets.EC2_HOSTNAME }}
 
