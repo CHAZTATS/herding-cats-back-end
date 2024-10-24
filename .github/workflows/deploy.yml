@@ -23,7 +23,7 @@ jobs:
               ls &&
               cd herding-cats-back-end &&
               git pull &&
-              npm i &&
+              npm install &&
               npm run build
               '
     
