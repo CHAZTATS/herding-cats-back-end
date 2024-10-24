@@ -8,17 +8,21 @@ on:
 jobs:
   Deploy:
     runs-on: ubuntu-latest
-    
-    steps:   
-      - name: DEPLOY
-        uses: appleboy/ssh-action@v1.1.0
-        with:
-          host: ${{ secrets.EC2_HOSTNAME }}
-          username: ${{ secrets.EC2_USERNAME }}
-          password: ${{ secrets.KEY }}
-          script: |
-            cd herding-cats-back-end &&
-            ssh -vT git@github.com &&
-            git pull &&
-            npm install &&
-            npm run build
+    steps:
+      - name: Configure SSH
+        run: |
+          Host staging
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/id_rsa.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.EC2_USERNAME }}
+          SSH_KEY: ${{ secrets.KEY }}
+          SSH_HOST: ${{ secrets.EC2_HOSTNAME }}
+
+      - name: deploy
+        run: |
+          cd herding-cats-backend &&
+          ls
