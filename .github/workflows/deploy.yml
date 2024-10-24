@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ development ]
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    
+    steps:   
+      - name: DEPLOY
+        uses: D3rHase/ssh-command-action@v0.2.2
+        with:
+          host: ${{secrets.EC2_HOSTNAME}} 
+          user: ${{secrets.EC2_USERNAME}} 
+          private_key: ${{secrets.KEY}} 
+          command: |
+            cd herdint-cats-backend &&
+            git pull &&
+            npm install &&
+            npm run build
