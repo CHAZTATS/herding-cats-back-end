@@ -17,4 +17,6 @@ jobs:
           user: ${{secrets.EC2_USERNAME}} 
           private_key: ${{secrets.KEY}} 
           command: |
-            ls
+            cd herding-cats-back-end &&
+            npm install &&
+            npm run build
