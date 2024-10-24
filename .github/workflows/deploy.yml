@@ -28,4 +28,4 @@ jobs:
           SSH_HOST: ${{ secrets.EC2_HOSTNAME }}
 
       - name: deploy
-        run: ssh staging 'git pull'
+        run: ssh staging 'cd herding-cats-back-end git pull'
