@@ -27,4 +27,4 @@ jobs:
           SSH_HOST: ${{ secrets.EC2_HOSTNAME }}
 
       - name: deploy
-        run: ssh staging 'ssh -vT git@github.com'
+        run: ssh staging 'sudo su && ssh -vT git@github.com'
