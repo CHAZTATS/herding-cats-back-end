@@ -28,4 +28,4 @@ jobs:
           SSH_HOST: ${{ secrets.EC2_HOSTNAME }}
 
       - name: deploy
-        run: ssh staging '"eval $(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa && ssh -vT git@github.com '
+        run: ssh staging '"eval $(ssh-agent -s)" && ls && ssh-add ~/.ssh/id_rsa && ssh -vT git@github.com '
