@@ -18,7 +18,3 @@ jobs:
           private_key: ${{secrets.KEY}} 
           command: |
             ls
-            cd herding-cats-backend &&
-            git pull &&
-            npm install &&
-            npm run build
