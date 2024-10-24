@@ -11,7 +11,7 @@ jobs:
     
     steps:   
       - name: DEPLOY
-        uses: appleboy/ssh-action@latest
+        uses: appleboy/ssh-action@1.1.0
         with:
           host: ${{ secrets.EC2_HOSTNAME }}
           username: ${{ secrets.EC2_USERNAME }}
