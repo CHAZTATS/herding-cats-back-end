@@ -11,12 +11,12 @@ jobs:
     
     steps:   
       - name: DEPLOY
-        uses: D3rHase/ssh-command-action@latest
+        uses: appleboy/ssh-action@latest
         with:
-          host: ${{secrets.EC2_HOSTNAME}} 
-          user: ${{secrets.EC2_USERNAME}} 
-          private_key: ${{secrets.KEY}} 
-          command: |
+          host: ${{ secrets.EC2_HOSTNAME }}
+          username: ${{ secrets.EC2_USERNAME }}
+          password: ${{ secrets.KEY }}
+          script: |
             cd herding-cats-back-end &&
             ssh -vT git@github.com &&
             git pull &&
