@@ -28,5 +28,5 @@ jobs:
 
       - name: deploy
         run: |
-          cd herding-cats-backend &&
+          cd herding-cats-back-end &&
           ls
