@@ -15,7 +15,7 @@ async function bootstrap() {
 
   const docConfig = new DocumentBuilder()
     .setTitle('Back-End')
-    .setDescription(`Herding-Cats`)
+    .setDescription(`Herding-Cats-2`)
     .setVersion('1.0')
     .addBearerAuth()
     .build();
