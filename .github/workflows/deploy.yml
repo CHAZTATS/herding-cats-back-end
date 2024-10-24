@@ -22,6 +22,7 @@ jobs:
               # Now we have got the access of EC2 and we will start the deploy .
               ls &&
               cd herding-cats-back-end &&
-              git pull
+              git pull &&
+              npm run build
               '
     
