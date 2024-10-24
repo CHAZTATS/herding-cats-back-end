@@ -29,4 +29,5 @@ jobs:
       - name: deploy
         run: |
           cd ../herding-cats-back-end &&
+          ls &&
           git pull
