@@ -28,4 +28,4 @@ jobs:
           SSH_HOST: ${{ secrets.EC2_HOSTNAME }}
 
       - name: deploy
-        run: ssh staging 'git clone git@github.com:CHAZTATS/herding-cats-back-end.git'
+        run: ssh staging 'git clone https://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@github.com/CHAZTATS/herding-cats-back-end.git'
