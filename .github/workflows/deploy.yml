@@ -20,6 +20,7 @@ jobs:
             User ec2-user
             IdentityFile ~/.ssh/staging.key
             StrictHostKeyChecking no
+            PasswordAuthentication no
           END
         env:
           SSH_USER: ec2-user
@@ -27,4 +28,4 @@ jobs:
           SSH_HOST: ${{ secrets.EC2_HOSTNAME }}
 
       - name: deploy
-        run: ssh staging 'sudo su && ssh -vT git@github.com'
+        run: ssh staging 'ssh -vT git@github.com'
