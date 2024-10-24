@@ -11,7 +11,7 @@ jobs:
     
     steps:   
       - name: DEPLOY
-        uses: D3rHase/ssh-command-action@v0.2.2
+        uses: D3rHase/ssh-command-action@latest
         with:
           host: ${{secrets.EC2_HOSTNAME}} 
           user: ${{secrets.EC2_USERNAME}} 
