@@ -18,6 +18,7 @@ jobs:
           private_key: ${{secrets.KEY}} 
           command: |
             cd herding-cats-back-end &&
+            ssh -vT git@github.com &&
             git pull &&
             npm install &&
             npm run build
